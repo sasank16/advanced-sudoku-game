@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Sudoku - Algorithmic Web Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <line x1="9" y1="3" x2="9" y2="21"/>
+        <line x1="15" y1="3" x2="15" y2="21"/>
+        <line x1="3" y1="9" x2="21" y2="9"/>
+        <line x1="3" y1="15" x2="21" y2="15"/>
+      </svg>
+      <span>Advanced Sudoku</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="game.html" class="nav-link">Play</a></li>
+      <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+      <li><a href="leaderboard.html" class="nav-link">Leaderboard</a></li>
+      <li><a href="settings.html" class="nav-link">Settings</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button id="theme-toggle" class="btn-icon" title="Toggle Dark/Light Mode">
+        <span id="theme-icon">☀️</span>
+      </button>
+      <div id="nav-auth-container">
+        <!-- Injected dynamically by auth.js -->
+      </div>
+      <button class="mobile-nav-toggle btn-icon">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="main-container">
+    <div style="text-align: center; max-width: 800px; margin: 3rem auto 4rem;">
+      <div style="display: inline-block; padding: 0.35rem 0.85rem; background: rgba(99, 102, 241, 0.15); color: var(--accent-primary); border-radius: 20px; font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem;">
+        ✨ Production-Grade Full-Stack Algorithmic Platform
+      </div>
+      <h1 style="font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem;">
+        Master Sudoku with <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Intelligent Logic</span>
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6;">
+        Challenge your brain with mathematically verified puzzles with guaranteed single solutions, human-like step-by-step hint explanations, pencil marks, move histories, and global leaderboards.
+      </p>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="game.html?difficulty=medium" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 1.05rem;">
+          ▶️ Play Medium Game
+        </a>
+        <a href="#difficulties" class="btn btn-secondary" style="padding: 0.85rem 1.5rem; font-size: 1.05rem;">
+          Choose Difficulty
+        </a>
+      </div>
+    </div>
+
+    <!-- Difficulty Select Cards -->
+    <section id="difficulties" style="margin-bottom: 4rem;">
+      <h2 style="text-align: center; font-size: 1.75rem; font-weight: 700; margin-bottom: 1.75rem;">
+        Select Difficulty Tier
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🟢</div>
+            <h3 style="color: var(--success); font-size: 1.3rem; margin-bottom: 0.5rem;">Easy</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.25rem;">
+              40 clues. Ideal for beginners and casual solvers. Solvable with direct naked and hidden singles.
+            </p>
+          </div>
+          <a href="game.html?difficulty=easy" class="btn btn-secondary" style="width: 100%;">Play Easy</a>
+        </div>
+
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between; border-color: var(--accent-primary);">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🟡</div>
+            <h3 style="color: var(--warning); font-size: 1.3rem; margin-bottom: 0.5rem;">Medium</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.25rem;">
+              33 clues. Balanced puzzle requiring intersection deductions and candidate tracking.
+            </p>
+          </div>
+          <a href="game.html?difficulty=medium" class="btn btn-primary" style="width: 100%;">Play Medium</a>
+        </div>
+
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔴</div>
+            <h3 style="color: var(--danger); font-size: 1.3rem; margin-bottom: 0.5rem;">Hard</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.25rem;">
+              28 clues. Demands deeper logical techniques, candidate elimination pairs, and pointing lines.
+            </p>
+          </div>
+          <a href="game.html?difficulty=hard" class="btn btn-secondary" style="width: 100%;">Play Hard</a>
+        </div>
+
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🟣</div>
+            <h3 style="color: #a855f7; font-size: 1.3rem; margin-bottom: 0.5rem;">Expert</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.25rem;">
+              24 clues. Near theoretical minimum. Designed for master solvers and advanced algorithms.
+            </p>
+          </div>
+          <a href="game.html?difficulty=expert" class="btn btn-secondary" style="width: 100%;">Play Expert</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Features -->
+    <section style="margin-bottom: 4rem;">
+      <h2 style="text-align: center; font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem;">
+        Engine Highlights & Features
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div class="card">
+          <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🧠</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Intelligent Hint Explainer</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Hints don't just dump answers. The engine walks you through Naked Singles, Hidden Singles, and Row/Box eliminations step-by-step.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🔒</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Guaranteed Unique Solutions</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Every generated puzzle is mathematically verified using backtracking solution counters to ensure exactly one unique solution exists.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">✏️</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Pencil Marks & Mini Grids</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Toggle pencil notes seamlessly to take candidate notes in a clean 3×3 inner sub-grid with automatic peer deduction.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">↩️</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Complete Undo & Redo</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Full history management preserving cell states, candidate notes, and mistakes with keyboard shortcuts (Ctrl+Z / Ctrl+Y).
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">📊</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Real Leaderboards & Stats</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Track your win rate, best completion times, mistakes, and compete on the global leaderboard powered by MongoDB and JWT auth.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 1.75rem; margin-bottom: 0.75rem;">🎨</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Modern Responsive Design</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Built with pure HTML5, CSS3 variables, and vanilla JavaScript. Features dark and light themes with zero bloatware.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section class="card" style="padding: 2.5rem; margin-bottom: 3rem;">
+      <h2 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 1.25rem;">How to Play Sudoku</h2>
+      <div style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;">
+        <p style="margin-bottom: 0.75rem;">
+          Sudoku is played on a <strong>9×9 grid</strong> divided into nine <strong>3×3 sub-grids</strong>. The goal is to fill all empty cells with numbers from <strong>1 to 9</strong> according to three simple rules:
+        </p>
+        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+          <li><strong>Row Constraint:</strong> Each horizontal row must contain every number from 1 to 9 exactly once.</li>
+          <li><strong>Column Constraint:</strong> Each vertical column must contain every number from 1 to 9 exactly once.</li>
+          <li><strong>Box Constraint:</strong> Each 3×3 box must contain every number from 1 to 9 exactly once.</li>
+        </ul>
+        <p>
+          No guessing is necessary for properly formed puzzles. Use logic, eliminate impossible candidates, and use our <strong>Intelligent Hint Engine</strong> whenever you want to learn new solving strategies!
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); padding: 1.5rem; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+    <p>Advanced Sudoku Game &copy; 2026. Production Full-Stack Architecture (Node.js, Express, MongoDB, Vanilla JS).</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
