@@ -2,11 +2,14 @@
 
 > A production-grade, full-stack algorithmic Sudoku web application featuring an independent backtracking solver, guaranteed unique-solution puzzle generation across four difficulty tiers, an intelligent step-by-step hint explainer, user authentication, and real-time statistics/leaderboards.
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Render-brightgreen?style=for-the-badge&logo=render)](https://advanced-sudoku-game.onrender.com/)
 ![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)
 ![Express](https://img.shields.io/badge/Express-4.x-lightgrey.svg)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-brightgreen.svg)
 ![JavaScript](https://img.shields.io/badge/Frontend-Vanilla%20JS%20%2F%20HTML5%20%2F%20CSS3-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+🌐 **Live Demo URL:** [https://advanced-sudoku-game.onrender.com/](https://advanced-sudoku-game.onrender.com/)
 
 ---
 
